@@ -4,5 +4,5 @@ from .serializers import UserModelSerializer
 
 
 class UserModelViewSet(ModelViewSet):
-    queryset = User.email, User.last_name, User.first_name, User.birthday_year
+    queryset = User.objects.all()
     serializer_class = UserModelSerializer

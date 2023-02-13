@@ -68,35 +68,12 @@ class Menu extends React.Component {
     }
 }
 class Foot extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            'footers': []
-        }
-    }
-    componentDidMount() {
-        const footers = [
-            {
-                'name': 'Arsenal',
-                'age': 10000,
-                'win': 7
-            },
-            {
-                'name': 'Zenit',
-                'age': 3500,
-                'win': 10
-            },
-        ]
-        this.setState(
-            {
-                'footers': footers
-            }
-        )
-    }
     render () {
         return (
             <div>
                 <FootList footers={this.state.footers} />
+                <MenuList menus={this.state.menus} />
+                <UserList users={this.state.users} />
             </div>
         )
     }
