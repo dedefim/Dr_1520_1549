@@ -13,7 +13,6 @@ class App extends React.Component {
         this.state = {
             'TODO': todos,
             'project': project
-
         }
     }
 render() {
