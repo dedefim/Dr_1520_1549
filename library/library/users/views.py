@@ -7,6 +7,7 @@ from rest_framework import mixins
 class UserModelViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
+
 class UsersSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = users
