@@ -34,14 +34,12 @@ urlpatterns = [
 name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0),
 name='schema-redoc'),
-
     path('openapi', get_schema_view(
         title="Your Project",
         description="API for all things …",
         version="1.0.0"
     ), name='openapi-schema'),
 ]
-
 schema_view = get_schema_view(
     openapi.Info(
         title="Library",
