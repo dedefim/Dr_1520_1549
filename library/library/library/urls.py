@@ -18,11 +18,8 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from users.views import UserModelViewSet
 from rest_framework.authtoken import views
-router = DefaultRouter()
-router.register('Users', UserModelViewSet)
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/', include(router.urls)),
-    path('api-token-auth/', views.obtain_auth_token),
-]
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+)
