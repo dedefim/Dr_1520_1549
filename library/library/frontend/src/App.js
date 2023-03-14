@@ -35,6 +35,17 @@ class App extends React.Component {
                 )
             }).catch(error => console.log(error))
    }
+    createTodo(name, user) {
+        const headers = this.get_headers()
+        const data = {name: name, user: user}
+        axios.post(`http://127.0.0.1:8000/api/books/`, data, {headers, headers})
+            .then(response => {
+                let new_todo = response.data
+                const user = this.state.user.filter((item) => item.id ===
+new_todo.user)[0]
+                new_todo.user = user
+                this.setState({todo: [...this.state, todo, new_book]})
+            }).catch(error => console.log(error))
 
 
    render () {
@@ -120,6 +131,11 @@ render() {
     return (
                     <Route exact path='/login' component={() => <LoginForm
 get_token={(username, password) => this.get_token(username, password)} />} />
+
+
+
+
+
 
 
 export default App, Menu, Foot;
